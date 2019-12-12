@@ -8,11 +8,7 @@ const UserGreeting = () => {
 }
 
 const GuestGreeting = () => {
-    return (
-        <div>
-            <h1 className="h1">Please sign up.</h1>;
-        </div>
-    )
+    return <h1 className="h1">Please sign up.</h1>;
 }
 
 const Greeting = props => {
@@ -38,7 +34,7 @@ const Button = props => {
 }
 
 const Result = props => {
-return <h1 className="result">{props.result}</h1>
+    return <h1 className="result">{props.result}</h1>
 }
 
 class LoginControl extends React.Component {
@@ -77,6 +73,7 @@ class LoginControl extends React.Component {
             return (
                 <div>
                     <Button onClick={this.handleLogoutClick} logX={"Logout"} />
+                    <GuestGreeting />
                     <Result result={this.state.calcul} />
                 </div>
             )
@@ -84,6 +81,7 @@ class LoginControl extends React.Component {
             return (
                 <div>
                     <Button onClick={this.handleLoginClick} logX={"Login"} />
+                    <UserGreeting />
                     <Result result={this.state.calcul} />
                 </div>
             )
